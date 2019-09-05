@@ -23,7 +23,7 @@ int main()
                 //cout << a.getTimeStamp() << "; " << a.getRoll() << "; " << a.getPitch() << endl;
                 if(a.verifyConstraints()){
                     outpuFile << a.getTimeStamp() << "; " << a.getRoll() << "; " << a.getPitch() << endl;
-                }else outpuFile << a.getTimeStamp() << "; Sample do not respect the constraints" << endl;
+                }else outpuFile << a.getTimeStamp() << "; Sample does not respect the constraints" << endl;
             }
             inputFile.close();
             outpuFile.close();
