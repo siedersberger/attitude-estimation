@@ -1,4 +1,4 @@
-# Estimativa de Roll e Pitch para uma amostragem bruta de um acelerômetro
+# Estimativa de Roll e Pitch para uma amostragem de acelerômetro
 
 Basicamente, este projeto é composto por três módulos princípais, são eles: 
 
@@ -14,16 +14,16 @@ Existem dois logs, um de entrada (attitude_exam.log) e outro de saída (roll_pit
   (time_stamp_ms; roll; pitch)
 </b></p>
 
-Por fim, os testes verificam se as estimativas dos ângulos estão corretas para diversas amostras específicas. Ainda, com base no artigo (application-note), os testes também verificam se as amostras obedecem as restrições do modelo Roll e Pitch.
+Por fim, os testes verificam se as estimativas dos ângulos estão corretas para diversas amostras específicas. Ainda, com base no artigo (application-note), os testes também verificam se as amostras obedecem as restrições do modelo Roll e Pitch. Para facilitar a portabilidade do projeto, o framework Catch2 foi utilizado para os testes. Esse framework é composto apenas por um arquivo header e não necessita de instalação.
 
 ## Para executar
 
-A execução da aplicação e dos testes é controlada pelo arquivo Makefile.
+A execução da aplicação e dos testes é controlada pelo arquivo Makefile. Para executá-los é necessário estar no mesmo diretório deste arquivo. Além disso, é necessário ter o `make` instalado.
 
 ### Comandos para execução da Aplicação
-- 'make all'
-- './run'
-- 'make clean'
+- `make all`
+- `./run`
+- `make clean`
 
 ### Comandos para execução dos testes
 - `make test`
