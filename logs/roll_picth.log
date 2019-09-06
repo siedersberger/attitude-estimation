@@ -1712,7 +1712,7 @@
 71851; 176.413; -3.86327
 71861; 173.765; -5.44431
 71871; 173.137; -4.14793
-71881; Sample does not respect the constraints
+71881; Invalid sample (it does not respect the constraint)
 71891; 173.17; -3.62107
 71901; 172.179; -3.36292
 71911; 171.976; -2.41527

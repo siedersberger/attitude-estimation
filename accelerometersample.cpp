@@ -1,8 +1,9 @@
 #include <math.h>
 #include "accelerometersample.h"
 
-AccelerometerSample::AccelerometerSample(const float mi_value):
-    mi(mi_value)
+AccelerometerSample::AccelerometerSample(const float mi_value, const int error_value):
+    mi(mi_value),
+    error(error_value)
 {
 }
 
@@ -32,12 +33,12 @@ int AccelerometerSample::signalGz(float az)
     return 1;
 }
 
-bool AccelerometerSample::verifyConstraints()
+bool AccelerometerSample::verifyConstraint()
 {
     float root_sum = sqrt((accel_x*accel_x) + (accel_y*accel_y) + (accel_z*accel_z));
     float diff = 980-root_sum;
     diff = sqrt(diff*diff);
-    if(diff > 100)
+    if(diff > error)
         return false;
     return true;
 }

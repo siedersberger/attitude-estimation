@@ -13,6 +13,7 @@ TEST_CASE("TestRollPitchAppNote")
 	REQUIRE((a.getPitch() >= -27.4 && a.getPitch() <= -27.3));
 }
 
+// teste para verificar os angulos de rotacao para Roll
 TEST_CASE("TestRollLimits") 
 {
 	AccelerometerSample a, b;
@@ -24,6 +25,7 @@ TEST_CASE("TestRollLimits")
 	REQUIRE((b.getRoll() - 90) < 0.1);
 }
 
+// teste para verificar os angulos de rotacao para Pitch
 TEST_CASE("TestPitchLimits") 
 {
 	AccelerometerSample a, b;
@@ -35,13 +37,15 @@ TEST_CASE("TestPitchLimits")
 	REQUIRE((b.getPitch() - 90) < 0.1);
 }
 
+// teste para verificar se a amostra obedece a restrição das somas 
+//	dos quadrados de Gx, Gy e Gz, que deve ser igual ao quadrado de g
 TEST_CASE("TestConstraints") 
 {
 	AccelerometerSample a, b;
-	stringstream sample_a("1; 0; 0; 1000");	//constrains ok
-	stringstream sample_b("1; 1000; 1000; 0");	//inclinacao maxima no picth
+	stringstream sample_a("1; 0; 0; 1000");	//restricoes obedecidas
+	stringstream sample_b("1; 1000; 1000; 0");	//restricoes nao obedecidas
 	sample_a >> a;
 	sample_b >> b;
-	REQUIRE(a.verifyConstraints()); 
-	REQUIRE(!b.verifyConstraints());
+	REQUIRE(a.verifyConstraint()); 
+	REQUIRE(!b.verifyConstraint());
 }
