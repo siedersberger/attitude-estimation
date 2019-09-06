@@ -25,10 +25,11 @@ int main()
             }
             inputFile.close();
             outpuFile.close();
+            cout << "Output log was correctly save!" << endl;
         } else {
-            cout << "Unable to write log file.";
+            cout << "Unable to write log file." << endl;
             inputFile.close();
         } 
-    } else cout << "Unable to open file";
+    } else cout << "Unable to open file" << endl;
   return 0;
 }
