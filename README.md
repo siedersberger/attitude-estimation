@@ -1,31 +1,31 @@
-# Estimativa de Roll e Pitch para uma amostragem de acelerômetro
+## Algorithm to estimate roll and pitch angles from a dataset of raw readings.
 
-Basicamente, este projeto é composto por três módulos princípais, são eles: 
+Basically, this project is compose by three main modules, such as: 
 
-- <b>aplicação;</b>
+- <b>application;</b>
 - <b>logs;</b>
-- <b>testes.</b>
+- <b>tests.</b>
 
-A aplicação é formada pelos arquivos main.cpp, accelerometersample.cpp e accelerometersample.h. Resumidamente, enquanto primeiro arquivo é responsável pela leitura e escrita dos logs, os outros são responsáveis pelo cálculo dos ângulos Roll e Pitch e verificação das amostras.
+The application is formed by the files main.cpp, accelerometersample.cpp e accelerometersample.h. Briefly, while the first file is responsible for reading and writing logs, the another ones are responsibles for samples verification and Roll and Picth estimate.
 
-Existem dois logs, um de entrada (attitude_exam.log) e outro de saída (roll_pitch.log). O log de entrada é consituído pela medições realizadas pelo acelerômetro e o log de saída pelos ângulos Roll e Picth, representados em graus. As amostras do log de entrada são lidas e utilizadas para cálculo dos ângulos, que são respectivamente escritos e salvos no log de saída no seguinte formato:
+There are two logs, input log (attitude_exam.log) and output log (roll_pitch.log). The first one is constitute for the accelerometer measures and the second for the Roll and Pitch estimation, represented in degrees. The input log samples are read and employed for calculate the rotations, that is respectively written and saved in output log, in the follow format: 
 
 <p align="center"><b>
   (time_stamp_ms; roll; pitch)
 </b></p>
 
-Por fim, os testes verificam se as estimativas dos ângulos estão corretas para diversas amostras específicas. Ainda, com base no artigo (application-note), os testes também verificam se as amostras obedecem as restrições do modelo Roll e Pitch. Para facilitar a portabilidade do projeto, o framework Catch2 foi utilizado para os testes. Esse framework é composto apenas por um arquivo header e não necessita de instalação.
+Finally, some the tests verify if the estimates are correct by testing some specifical samples. Furthermore, based on article (application-note), anothers the tests verify if the samples respect the model constraints. For easier portability, the tests use Cacth2 framework, which is only composed by a header file and do not need instalation.  
 
-## Para executar
+## To run
 
-A execução da aplicação e dos testes é controlada pelo arquivo Makefile. Para executá-los é necessário estar no mesmo diretório deste arquivo. Além disso, é necessário ter o `make` instalado.
+The application and tests execution is controlled by Makefile file. For execute them is necessary been in the same directory of Makefile. In addition, is necessary have the `make` installed.
 
-### Comandos para execução da Aplicação
+### Commands to run application
 - `make all`
-- `./run`
+- `./app`
 - `make clean`
 
-### Comandos para execução dos testes
+### Commands to run tests
 - `make test`
 - `./test`
 - `make clean`
